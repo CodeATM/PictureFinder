@@ -52,7 +52,7 @@ const page = async ({ params: { id } }) => {
             <div className="text-gray-500 border-gray-500 border-[1.5px] rounded-sm p-1">
               <FaHeart className="text-lg " />
             </div>
-            <Link href={Detail.links.download}>
+            <Link href={Detail.links.download_location}>
               <div className="bg-black text-gray-100 flex py-1 px-4 space-x-3 rounded-r-[4px] items-center font-semibold cursor-pointer">
                 Download
               </div>
