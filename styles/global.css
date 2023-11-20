@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  max-width: 1150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img_container {
+  max-width: 1150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.home_img {
+  background: url(../public/assets/f.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.gallery {
+  -webkit-column-count: 5;
+  -moz-column-count: 5;
+  column-count: 5;
+  -webkit-column-width: 20%;
+  -moz-column-width: 20%;
+  column-width: 20%;
+}
+
+.picture {
+  width: 100%; 
+  height: auto;
+  display: block;
+  padding: 8px;
+}
+
+.mini_gallery {
+  -webkit-column-count: 4;
+  -moz-column-count: 4;
+  column-count: 4;
+  -webkit-column-width: 25%;
+  -moz-column-width: 25%;
+  column-width: 25%;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 992px) {
+  .gallery {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+    -webkit-column-width: 25%;
+    -moz-column-width: 25%;
+    column-width: 25%;
+    padding: 0 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .gallery {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-width: 50%;
+    -moz-column-width: 50%;
+    column-width: 50%;
+    padding: 0 8px;
+  }
+  .mini_gallery {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-width: 50%;
+    -moz-column-width: 50%;
+    column-width: 50%;
+    padding: 0 8px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .gallery {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    -webkit-column-width: 100%;
+    -moz-column-width: 100%;
+    column-width: 100%;
+    padding: 0 8px;
+  }
+  .mini_gallery {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    -webkit-column-width: 100%;
+    -moz-column-width: 100%;
+    column-width: 100%;
+    padding: 0 8px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: darkslategrey;
+  border-radius: 3px;
+}
+
+/* styles/globals.css */
+@keyframes loading {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.loading {
+  animation: fadeInOut 2s ease-in-out infinite;
+}
