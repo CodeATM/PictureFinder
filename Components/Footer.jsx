@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="footer relative bottom-0">
       <div className="bg-black ">
-        <div className="container flex flex-col md:flex-row gap-4 py-7 justify-center">
+        <div className="container grid grid-cols-4 gap-4">
           <div className="space-y-3 mr-5 md:w-1/3 w-full text-center md:text-left px-4">
             <h1 className="text-xl font-semibold tracking-wide text-white">
               PicFinder
