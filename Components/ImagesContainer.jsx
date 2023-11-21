@@ -49,15 +49,15 @@ const ImagesContainer = () => {
 
   return (
     <section className="images my-8">
-      <div className="img_container">
-        <div className="gallery">
+      <div className="container">
+        <div className="grid">
           {photos.map((image) => (
             <Link href={`Details/${image.id}/`} key={image.id}>
-              <div className="picture cursor-pointer">
+              <div className="grid_item">
                 <Image
                   src={image.urls.small}
                   alt={image.alt_description}
-                  className=" "
+                  className="grid_image"
                   width="500"
                   height="500"
                 />

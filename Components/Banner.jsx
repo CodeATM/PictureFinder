@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import banner from "@public/assets/f.jpg";
 import { FiSearch } from "react-icons/fi";
@@ -8,18 +9,18 @@ const Banner = async () => {
   const banner = getBanner();
 
   const Banner = await banner;
-
+  
   return (
     <header className="">
       <div
-        className="w-full bg-center bg-cover h-auto"
+        className="w-full bg-center bg-cover h-full"
         style={{
           backgroundImage: `url(${Banner.urls.regular})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div className="flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-50 py-32">
+        <div className="flex items-center justify-center w-full bg-gray-900 bg-opacity-50 py-32">
           <div className="text-center">
             <div className="container px-4 mx-auto">
               <div className="max-w-4xl mx-auto text-center">
@@ -37,7 +38,8 @@ const Banner = async () => {
                 href="#">start your free trial</a> */}
 
                 <div className="relative">
-                  <Search />
+                <Search/>
+
                 </div>
               </div>
             </div>
