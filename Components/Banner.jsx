@@ -13,7 +13,7 @@ const Banner = async () => {
   return (
     <header className="">
       <div
-        className="w-full bg-center bg-cover h-full"
+        className="w-full h-full"
         style={{
           backgroundImage: `url(${Banner.urls.regular})`,
           backgroundSize: "cover",
