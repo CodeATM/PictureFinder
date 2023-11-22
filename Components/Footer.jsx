@@ -10,8 +10,8 @@ const Footer = () => {
             <span className="text-2xl text-white font-bold flex justify-center md:justify-start">
               <FiImage />
             </span>
-            <h1 className="font-bold text-2xl tracking-wide">Picfinder</h1>
-            <p className=" font-semibold">
+            <h1 className="font-bold text-2xl tracking-wide text-white">Picfinder</h1>
+            <p className=" font-semibold text-white">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Obcaecati ut et nobis ex, accusamus impedit aliquam beatae! Est
               vitae culpa modi.
@@ -21,14 +21,14 @@ const Footer = () => {
           <div className="space-y-2">
             <h1 className="text-xl font-semibold">Connect with us</h1>
             <div className="flex space-x-1 justify-center">
-              <div className="hover:bg-slate-400 p-2 rounded-full">
+              <div className="hover:bg-slate-400 p-2 rounded-full text-white">
                 <FiGithub />
               </div>
 
-              <div className="hover:bg-slate-400 p-2 rounded-full">
+              <div className="hover:bg-slate-400 p-2 rounded-full text-white">
                 <FiGlobe />
               </div>
-              <div className="hover:bg-slate-400 p-2 rounded-full">
+              <div className="hover:bg-slate-400 p-2 rounded-full text-white">
                 <FiTwitter />
               </div>
             </div>
