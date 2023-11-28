@@ -10,7 +10,7 @@ export default function Error({ error, reset }) {
   }, [error]);
 
   return (
-    <div className="w-full h-[90vh]">
+    <div className="w-full flex justify-center items-center">
       <div className=" pt-[15vh]">
         <div className="container text-center flex flex-col items-center">
           <h2 className="text-[10rem] tracking-widest font-bold">404</h2>
