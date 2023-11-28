@@ -49,11 +49,11 @@ const ImagesContainer = () => {
   return (
     <section className="images my-8">
       <div className="container">
-        <div className="gallery">
+        <div className="grid_img">
           {photos.map((image) => (
             <Link href={`Details/${image.id}/`} key={image.id}>
               <Image
-                src={image.urls.small}
+                src={image.urls.regular}
                 alt={image.alt_description}
                 className="grid_image"
                 width="500"

@@ -25,13 +25,12 @@
 
 .grid_img{
   display: grid;
-  padding: 3rem 1rem;
+  padding: 10px;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 2rem;
-
 }
 
-.grid__item {
+.grid_item {
   list-style: none;
   padding: 1rem;
 }
