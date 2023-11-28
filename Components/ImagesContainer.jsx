@@ -1,5 +1,5 @@
 // Import other necessary dependencies
-'use client'
+"use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,7 +7,7 @@ import getAllImages from "@lib/getAllImages";
 
 const ImagesContainer = () => {
   const [photos, setPhotos] = useState([]);
-  const [page, setPage] = useState(1); // Start from the first page
+  const [page, setPage] = useState(0); // Start from the first page
 
   const fetchMorePhotos = async () => {
     try {
@@ -19,14 +19,13 @@ const ImagesContainer = () => {
       setPhotos((prevPhotos) => [...prevPhotos, ...newPhotos]);
       setPage(nextPage); // Use the incremented page value
     } catch (error) {
-      console.error('Error fetching more photos:', error);
+      console.error("Error fetching more photos:", error);
     }
   };
 
   useEffect(() => {
-    fetchMorePhotos()
-  }, [])
-  
+    fetchMorePhotos();
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,11 +37,11 @@ const ImagesContainer = () => {
       }
     };
 
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', handleScroll);
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
 
       return () => {
-        window.removeEventListener('scroll', handleScroll);
+        window.removeEventListener("scroll", handleScroll);
       };
     }
   }, [photos, page]); // Include 'page' in the dependencies to fix the missing dependency warning.
@@ -50,18 +49,16 @@ const ImagesContainer = () => {
   return (
     <section className="images my-8">
       <div className="container">
-        <div className="grid">
+        <div className="gallery">
           {photos.map((image) => (
             <Link href={`Details/${image.id}/`} key={image.id}>
-              <div className="grid_item">
-                <Image
-                  src={image.urls.small}
-                  alt={image.alt_description}
-                  className="grid_image"
-                  width="500"
-                  height="500"
-                />
-              </div>
+              <Image
+                src={image.urls.small}
+                alt={image.alt_description}
+                className="grid_image"
+                width="500"
+                height="500"
+              />
             </Link>
           ))}
         </div>
