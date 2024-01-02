@@ -18,7 +18,7 @@ const Page = async ({ params: { searchValue } }) => {
 
   useEffect(() => {
     // Function to fetch images from Unsplash API
-    const fetchImages = async () => {
+    const fetchImages = async (searchValue) => {
       try {
         const response = await fetch(
           `https://api.unsplash.com/search/photos/?client_id=dthP8VNzMTvgPPCHRVAInVjlov43oenGQx8UkNn2VqE&query=${searchValue}&per_page=50`
@@ -64,11 +64,11 @@ const Page = async ({ params: { searchValue } }) => {
               </Link>
             ))}
           </div>
-          <div className="flex justify-center">
+          {/* <div className="flex justify-center">
             <button className="text-gray-700 hover:text-gray-500 px-3 py-2 text-lg font-semibold mt-5">
               Show more
             </button>
-          </div>
+          </div> */}
         </InfiniteScroll>
       </section>
     </div>
