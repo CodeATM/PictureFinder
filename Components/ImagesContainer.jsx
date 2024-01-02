@@ -26,45 +26,6 @@ const ImagesContainer = () => {
     // Initial fetch
     fetchImages();
   }, [page]);
-  // const [photos, setPhotos] = useState([]);
-  // const [page, setPage] = useState(0); // Start from the first page
-
-  // const fetchMorePhotos = async () => {
-  //   try {
-  //     const nextPage = page + 1; // Increment the page
-  //     const response = await fetch(
-  //       `https://api.unsplash.com/photos?page=${nextPage}&client_id=dthP8VNzMTvgPPCHRVAInVjlov43oenGQx8UkNn2VqE`
-  //     );
-  //     const newPhotos = await response.json();
-  //     setPhotos((prevPhotos) => [...prevPhotos, ...newPhotos]);
-  //     setPage(nextPage); // Use the incremented page value
-  //   } catch (error) {
-  //     console.error("Error fetching more photos:", error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchMorePhotos();
-  // }, []);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (
-  //       window.innerHeight + window.scrollY ===
-  //       document.documentElement.offsetHeight
-  //     ) {
-  //       fetchMorePhotos();
-  //     }
-  //   };
-
-  //   if (typeof window !== "undefined") {
-  //     window.addEventListener("scroll", handleScroll);
-
-  //     return () => {
-  //       window.removeEventListener("scroll", handleScroll);
-  //     };
-  //   }
-  // }, [photos, page]); // Include 'page' in the dependencies to fix the missing dependency warning.
 
   return (
     <section className="container mx-auto my-8">
