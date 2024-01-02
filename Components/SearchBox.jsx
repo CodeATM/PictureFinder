@@ -12,7 +12,7 @@ const SearchBox = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSearchValue("");
-    router.push(`/${searchValue}/`);
+    router.push(`search/${searchValue}/`);
   };
 
   return (

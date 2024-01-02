@@ -14,12 +14,11 @@ const RelatedImages = async ({ Detail }) => {
         <div className="gallery">
           {Images.map((image) => {
             return (
-              <Link href={`Details/${image.id}/`}>
+              <Link href={`/${image.id}/`}>
                 <div className="picture cursor-pointer" key={image.id}>
                   <Image
                     src={image.urls.small}
                     alt={image.alt_description}
-                    DDD
                     className=" "
                     width="500"
                     height="500"

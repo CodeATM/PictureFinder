@@ -21,33 +21,26 @@ const Page = async ({ params: { searchValue } }) => {
             </span>
           </h1>
         </div>
-        <div className="img_container">
-          <div className="gallery">
-            {Images.map((image) => {
-              return (
-                <Link href={`Details/${image.id}/`}>
-                  <div className="picture" key={image.id}>
-                    <Image
-                      src={image.urls.small}
-                      alt={image.alt_description}
-                      className=" "
-                      width="500"
-                      height="500"
-                    />
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-
+        <div className="grid_img">
+        <div className="grid_img">
+          {Images.map((image) => (
+            <Link href={`details/${image.id}/`} key={image.id}>
+              <Image
+                src={image.urls.regular}
+                alt={image.alt_description}
+                className="grid_image"
+                width="500"
+                height="500"
+              />
+            </Link>
+          ))}
+        </div>
           <div className="flex justify-center">
             <button className="text-gray-700 hover:text-gray-500 px-3 py-2 text-lg font-semibold mt-5">
               Show more
             </button>
           </div>
         </div>
-
-        {/* <ImageDetails className= 'hidden'/> */}
       </section>
     </div>
   );

@@ -9,39 +9,64 @@ const Footer = () => {
           <FiImage className="text-2xl text-white md:flex md:justify-center" />
           <h1 className="text-white text-lg font-semibold">Picfinder</h1>
           <p className="text-white text-sm">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecbbati
-            ut et nobis ex, accusamus impedit aliquam beatae! Est vitae culpa
-            modi.
+            Picfinder is a website the brings differnt images to your fingertip for download. The website run on unsoplash Api which is one of the biggest image api provider available today.
           </p>
+          <div className="flex items-center justify-center gap-4">
+            
+          </div>
         </div>
 
         <div className="md:w-[60%] mt-2 md:mt-0">
           <div className="grid grid-cols-1 gap-1 md:grid-cols-3">
             <div className="">
-              <h1 className="text-lg font-semibold text-white">Community</h1>
+              <h1 className="text-lg font-semibold text-white">About Us</h1>
               <ul className="space-y-[2P]">
-                <li className="text-white text-sm">About us</li>
-                <li className="text-white text-sm">About us</li>
-                <li className="text-white text-sm">About us</li>
-                <li className="text-white text-sm">About us</li>
+                <li className="text-white text-sm">
+                  <a href="">About us</a>
+                </li>
+                <li className="text-white text-sm">
+                  <a href="">About us</a>
+                </li>
+                <li className="text-white text-sm">
+                  <a href="">About us</a>
+                </li>
+                <li className="text-white text-sm">
+                  <a href="">About us</a>
+                </li>
               </ul>
             </div>
             <div className="">
               <h1 className="text-lg font-semibold text-white">Community</h1>
               <ul className="space-y-[2P]">
-                <li className="text-white text-sm">About us</li>
-                <li className="text-white text-sm">About us</li>
-                <li className="text-white text-sm">About us</li>
-                <li className="text-white text-sm">About us</li>
+                <li className="text-white text-sm">
+                  <a href="">About us</a>
+                </li>
+                <li className="text-white text-sm">
+                  <a href="">About us</a>
+                </li>
+                <li className="text-white text-sm">
+                  <a href="">About us</a>
+                </li>
+                <li className="text-white text-sm">
+                  <a href="">About us</a>
+                </li>
               </ul>
             </div>
             <div className="">
               <h1 className="text-lg font-semibold text-white">Community</h1>
               <ul className="space-y-[2P]">
-                <li className="text-white text-sm">About us</li>
-                <li className="text-white text-sm">About us</li>
-                <li className="text-white text-sm">About us</li>
-                <li className="text-white text-sm">About us</li>
+                <li className="text-white text-sm">
+                  <a href="">About us</a>
+                </li>
+                <li className="text-white text-sm">
+                  <a href="">About us</a>
+                </li>
+                <li className="text-white text-sm">
+                  <a href="">About us</a>
+                </li>
+                <li className="text-white text-sm">
+                  <a href="">About us</a>
+                </li>
               </ul>
             </div>
           </div>
