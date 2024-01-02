@@ -12,7 +12,7 @@ const Search = ({ showBackground }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSearchValue("");
-    router.push(`search/${searchValue}/`);
+    router.push(`/${searchValue}/`);
   };
 
   return (
