@@ -27,7 +27,7 @@ const page = async ({ params: { id } }) => {
 
   return (
     <div className="py-20 bg-gray-50">
-      <div className="container  bg-white p-8 rounded-lg">
+      <div className="container mx-auto bg-white p-8 rounded-lg">
         <div className="heading flex justify-between items-center">
           <div className="flex space-x-3 items-center">
             <Image
