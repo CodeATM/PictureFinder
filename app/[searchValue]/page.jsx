@@ -3,7 +3,7 @@ import React from "react";
 import searchImages from "@lib/search";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const Page = async ({ params: { searchValue } }) => {
@@ -14,7 +14,7 @@ const Page = async ({ params: { searchValue } }) => {
   // const Images = await images.results;
 
   const [images, setImages] = useState([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
 
   useEffect(() => {
     // Function to fetch images from Unsplash API
@@ -52,7 +52,7 @@ const Page = async ({ params: { searchValue } }) => {
             </h1>
           </div>
           <div className="grid_img">
-            {Images.map((image) => (
+            {images.map((image) => (
               <Link href={`details/${image.id}/`} key={image.id}>
                 <Image
                   src={image.urls.regular}
