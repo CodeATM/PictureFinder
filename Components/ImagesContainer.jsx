@@ -7,7 +7,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 const ImagesContainer = () => {
   const [images, setImages] = useState([]);
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     // Function to fetch images from Unsplash API
@@ -29,25 +29,27 @@ const ImagesContainer = () => {
 
   return (
     <section className="container mx-auto my-8">
-      <div className="grid_img">
-         <InfiniteScroll
-          dataLength={images.length}
-          next={() => setPage(page + 1)}
-          hasMore={true} // Set to false when you've fetched all images
-        >
+      <InfiniteScroll
+        dataLength={images.length}
+        next={() => setPage(page + 1)}
+        hasMore={true} // Set to false when you've fetched all images
+      >
+        <div className="gallery">
           {images.map((image) => (
+            <div className= 'pic'>
             <Link href={`details/${image.id}`} key={image.id}>
               <Image
                 src={image.urls.regular}
                 alt={image.alt_description}
-                className=""
-                width="500"
-                height="500"
+                className="object-cover"
+                width = "500"
+                height = "500"
               />
             </Link>
+            </div>
           ))}
-        </InfiniteScroll>
-      </div>
+        </div>
+      </InfiniteScroll>
 
       <div className="flex justify-center">
         <button

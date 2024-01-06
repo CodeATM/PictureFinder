@@ -36,7 +36,7 @@ const Page = async ({ params: { searchValue } }) => {
 
   return (
     <div>
-      <section className="images py-16 container">
+      <section className="images py-16 container mx-auto">
         <InfiniteScroll
           dataLength={images.length}
           next={() => setPage(page + 1)}
@@ -58,8 +58,7 @@ const Page = async ({ params: { searchValue } }) => {
                   src={image.urls.regular}
                   alt={image.alt_description}
                   className="grid_image"
-                  width="500"
-                  height="500"
+                  fill
                 />
               </Link>
             ))}
