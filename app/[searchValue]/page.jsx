@@ -21,7 +21,7 @@ const Page = async ({ params: { searchValue } }) => {
     const fetchImages = async (searchValue) => {
       try {
         const response = await fetch(
-          `https://api.unsplash.com/search/photos/?client_id=dthP8VNzMTvgPPCHRVAInVjlov43oenGQx8UkNn2VqE&query=${searchValue}&per_page=50`
+          `https://api.unsplash.com/search/photos/?client_id=dthP8VNzMTvgPPCHRVAInVjlov43oenGQx8UkNn2VqE&query=${searchValue}&per_page=15`
         );
         const newPhotos = await response.json();
         setImages((prevPhotos) => [...prevPhotos, ...newPhotos]);

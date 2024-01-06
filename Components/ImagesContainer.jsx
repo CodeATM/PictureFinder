@@ -7,14 +7,14 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 const ImagesContainer = () => {
   const [images, setImages] = useState([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(2);
 
   useEffect(() => {
     // Function to fetch images from Unsplash API
     const fetchImages = async () => {
       try {
         const response = await fetch(
-          `https://api.unsplash.com/photos?per_page=40&?page=${page}&client_id=dthP8VNzMTvgPPCHRVAInVjlov43oenGQx8UkNn2VqE`
+          `https://api.unsplash.com/photos?per_page=15&?page=${page}&client_id=dthP8VNzMTvgPPCHRVAInVjlov43oenGQx8UkNn2VqE`
         );
         const newPhotos = await response.json();
         setImages((prevPhotos) => [...prevPhotos, ...newPhotos]);

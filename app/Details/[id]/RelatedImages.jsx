@@ -14,7 +14,7 @@ const ImagesContainer = () => {
     const fetchImages = async () => {
       try {
         const response = await fetch(
-          `https://api.unsplash.com/photos?per_page=40&client_id=dthP8VNzMTvgPPCHRVAInVjlov43oenGQx8UkNn2VqE`
+          `https://api.unsplash.com/photos?per_page=15&client_id=dthP8VNzMTvgPPCHRVAInVjlov43oenGQx8UkNn2VqE`
         );
         console.log(response);
         const newPhotos = await response.json();
