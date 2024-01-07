@@ -21,7 +21,7 @@ const ImagesContainer = () => {
         setImages((prevPhotos) => [...prevPhotos, ...newPhotos]);
       } catch (error) {
         console.error("Error fetching images:", error);
-      }
+      }n
     };
 
     // Initial fetch
@@ -41,7 +41,7 @@ const ImagesContainer = () => {
               <Link href={`/details/${image.id}`} key={image.id}>
                 <div className="pic">
                   <Image
-                    src={image.urls.regular}
+                    src={image.urls.small}
                     alt={image.alt_description}
                     className="grid_image"
                     width="500"
@@ -60,7 +60,7 @@ const ImagesContainer = () => {
           // onClick={fetchMorePhotos}
         >
           Show more
-        </button>
+        </button>r
       </div>
 
       {/* <ImageDetails className='hidden' /> */}

@@ -39,7 +39,7 @@ const ImagesContainer = () => {
             <div className= 'pic'>
             <Link href={`details/${image.id}`} key={image.id}>
               <Image
-                src={image.urls.regular}
+                src={image.urls.small}
                 alt={image.alt_description}
                 className="object-cover"
                 width = "500"
