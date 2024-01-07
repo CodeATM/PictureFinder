@@ -34,14 +34,13 @@ const ImagesContainer = () => {
         next={() => setPage(page + 1)}
         hasMore={true} // Set to false when you've fetched all images
       >
-        <div className="gallery">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
           {images.map((image) => (
-            <div className= 'pic'>
+            <div className= ''>
             <Link href={`details/${image.id}`} key={image.id}>
               <Image
                 src={image.urls.small}
                 alt={image.alt_description}
-                className="object-cover"
                 width = "500"
                 height = "500"
               />
