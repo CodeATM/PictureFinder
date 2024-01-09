@@ -39,13 +39,10 @@
   margin: 10px;
 } */
 .gallery {
-  -webkit-column-count: 3;
-  -moz-column-count: 3;
-  column-count: 3;
-  -webkit-column-width: 33%;
-  -moz-column-width: 33%;
-  column-width: 33%;
-  padding: 8px;
+  grid-column-gap: 24px;
+  align-items: start;
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
 }
 
 .pic{
