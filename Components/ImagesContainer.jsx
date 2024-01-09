@@ -45,7 +45,7 @@ const ImagesContainer = () => {
             <div className="mb-6">
               <Link href={`details/${image.id}`} key={image.id}>
                 <Image
-                  src={image.urls.regular}
+                  src={image.urls.small}
                   alt={image.alt_description}
                   width="500"
                   height="500"
