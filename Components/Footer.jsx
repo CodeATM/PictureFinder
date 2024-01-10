@@ -22,33 +22,16 @@ const Footer = () => {
               <h1 className="text-lg font-semibold text-white">About Us</h1>
               <ul className="space-y-[2P]">
                 <li className="text-white text-sm">
-                  <a href="">About us</a>
+                  <a href="/">About us</a>
                 </li>
                 <li className="text-white text-sm">
-                  <a href="">About us</a>
+                  <a href="/">FAQS</a>
                 </li>
                 <li className="text-white text-sm">
-                  <a href="">About us</a>
+                  <a href="https://unsplash.com/documentation">API</a>
                 </li>
                 <li className="text-white text-sm">
-                  <a href="">About us</a>
-                </li>
-              </ul>
-            </div>
-            <div className="">
-              <h1 className="text-lg font-semibold text-white">Community</h1>
-              <ul className="space-y-[2P]">
-                <li className="text-white text-sm">
-                  <a href="">About us</a>
-                </li>
-                <li className="text-white text-sm">
-                  <a href="">About us</a>
-                </li>
-                <li className="text-white text-sm">
-                  <a href="">About us</a>
-                </li>
-                <li className="text-white text-sm">
-                  <a href="">About us</a>
+                  <a href="/">Privacy Policy</a>
                 </li>
               </ul>
             </div>
@@ -56,16 +39,30 @@ const Footer = () => {
               <h1 className="text-lg font-semibold text-white">Community</h1>
               <ul className="space-y-[2P]">
                 <li className="text-white text-sm">
-                  <a href="">About us</a>
+                  <a href="/">Blog</a>
                 </li>
                 <li className="text-white text-sm">
-                  <a href="">About us</a>
+                  <a href="/">Forum</a>
                 </li>
                 <li className="text-white text-sm">
-                  <a href="">About us</a>
+                  <a href="/">Crators</a>
                 </li>
                 <li className="text-white text-sm">
-                  <a href="">About us</a>
+                  <a href="/">Cameras</a>
+                </li>
+              </ul>
+            </div>
+            <div className="">
+              <h1 className="text-lg font-semibold text-white">Contact us</h1>
+              <ul className="space-y-[2P]">
+                <li className="text-white text-sm">
+                  <a href="">GitHub</a>
+                </li>
+                <li className="text-white text-sm">
+                  <a href="">Twiter</a>
+                </li>
+                <li className="text-white text-sm">
+                  <a href="">LinkedIn</a>
                 </li>
               </ul>
             </div>
