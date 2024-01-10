@@ -49,7 +49,7 @@ const Page = ({ params: { searchValue } }) => {
         >
           {images.map((image) => (
             <div className="m-4" key={image.id}>
-              <Link href={`details/${image.id}`}>
+              <Link href={`Details/${image.id}`}>
                 <Image
                   src={image.urls.small}
                   alt={image.alt_description}
