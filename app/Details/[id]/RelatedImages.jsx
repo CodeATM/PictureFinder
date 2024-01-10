@@ -40,10 +40,14 @@ const ImagesContainer = () => {
         next={() => setPage(page + 1)}
         hasMore={true} // Set to false when you've fetched all images
       >
-        <Masonry breakpointCols={breakpointColumnObj} className="flex w-auto -ml-[30px] mx-6" columnClassName="pl-5">
+        <Masonry
+          breakpointCols={breakpointColumnObj}
+          className="flex w-auto"
+          columnClassName=""
+        >
           {images.map((image) => (
-            <div className="mb-6">
-              <Link href={`details/${image.id}`} key={image.id}>
+            <div className="m-4" key={image.id}>
+              <Link href={`details/${image.id}`}>
                 <Image
                   src={image.urls.small}
                   alt={image.alt_description}

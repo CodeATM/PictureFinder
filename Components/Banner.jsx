@@ -17,7 +17,7 @@ const Banner = async () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         width: "100%",
-        height: "60vh",
+        height: "65vh",
       }}
     >
       <div className="flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-50">

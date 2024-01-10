@@ -27,10 +27,10 @@ const Navbar = () => {
   return (
     <div
       className={`w-full h-16 py-4 px-3 z-50 fixed transition  duration-500 top-0 ${
-        showBackground ? "bg-white text-black" : "text-gray-500"
+        showBackground ? "bg-white text-black" : "text-gray-200"
       }`}
     >
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container mx-auto flex justify-between items-center pr-2">
         <Link href="/">
           <div className="logo flex items-center space-x-2">
             <FiImage className="text-xl" />{" "}
@@ -38,7 +38,7 @@ const Navbar = () => {
           </div>
         </Link>
 
-        <div className="relative w-64">
+        <div className="relative w-64 pl-2">
           <Search showBackground={showBackground} />
         </div>
       </div>
