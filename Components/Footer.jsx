@@ -56,13 +56,13 @@ const Footer = () => {
               <h1 className="text-lg font-semibold text-white">Contact us</h1>
               <ul className="space-y-[2P]">
                 <li className="text-white text-sm">
-                  <a href="">GitHub</a>
+                  <a href="https://github.com/CodeATM">GitHub</a>
                 </li>
                 <li className="text-white text-sm">
-                  <a href="">Twiter</a>
+                  <a href="https://twitter.com/MatthewOlu86153?t=hIHXwA4pmwxxb9Jb6WInsg&s=09">Twiter</a>
                 </li>
                 <li className="text-white text-sm">
-                  <a href="">LinkedIn</a>
+                  <a href="https://www.linkedin.com/in/awe-oluwatimileyin-936426248">LinkedIn</a>
                 </li>
               </ul>
             </div>
