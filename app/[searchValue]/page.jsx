@@ -21,7 +21,7 @@ const Page = ({ params: { searchValue } }) => {
     console.log(searchValue);
     try {
       const response = await fetch(
-        `https://api.unsplash.com/search/photos?&query=${searchValue}&page=${page}&per_page=10&client_id=dthP8VNzMTvgPPCHRVAInVjlov43oenGQx8UkNn2VqE`
+        `https://api.unsplash.com/search/photos?&query=${searchValue}&page=${page}&per_page=10&client_id=process.env.UNSPLASH_ACCESS_KEY`
       );
       const newPhotos = await response.json();
       setImages((prevPhotos) => [...prevPhotos, ...newPhotos.results]);
@@ -49,7 +49,7 @@ const Page = ({ params: { searchValue } }) => {
         >
           {images.map((image) => (
             <div className="m-4" key={image.id}>
-              <Link href={`Details/${image.id}`}>
+              <Link href={`/Details/${image.id}`}>
                 <Image
                   src={image.urls.small}
                   alt={image.alt_description}

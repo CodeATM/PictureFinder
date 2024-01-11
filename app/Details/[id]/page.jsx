@@ -29,7 +29,7 @@ const page = async ({ params: { id } }) => {
     <div className="py-20 bg-gray-50">
       <div className="container mx-auto bg-white p-8 rounded-lg">
         <div className="heading flex justify-between items-center">
-          <div className="flex space-x-3 items-center">
+          <div className="flex space-x-3 items-center pr-2">
             <Image
               src={Detail.user.profile_image.medium}
               alt={img}
@@ -37,7 +37,7 @@ const page = async ({ params: { id } }) => {
               width="30"
               height="30"
             />
-            <div className="leading-tight">
+            <div className="leading-tight ">
               <h3 className="font-bold  tracking-wide">{Detail.user.name}</h3>
               <p className="text-sm text-gray-500 font-semibold">
                 {Detail.user.username}
@@ -45,13 +45,7 @@ const page = async ({ params: { id } }) => {
             </div>
           </div>
 
-          <div className="flex space-x-1 items-center">
-            <div className="text-gray-500 border-gray-500 border-[1.5px] rounded-sm p-1">
-              <FiPlus className="text-lg " />
-            </div>
-            <div className="text-gray-500 border-gray-500 border-[1.5px] rounded-sm p-1">
-              <FaHeart className="text-lg " />
-            </div>
+          <div className="flex items-center">
             <Link href={Detail.links.download_location}>
               <div className="bg-black text-gray-100 flex py-1 px-4 space-x-3 rounded-r-[4px] items-center font-semibold cursor-pointer">
                 Download
