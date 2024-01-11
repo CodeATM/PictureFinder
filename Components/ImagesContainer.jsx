@@ -20,7 +20,7 @@ const ImagesContainer = () => {
     const fetchImages = async () => {
       try {
         const response = await fetch(
-          `https://api.unsplash.com/photos?page=${page}&per_page=10&client_id=process.env.UNSPLASH_ACCESS_KEY`
+          `https://api.unsplash.com/photos?page=${page}&per_page=10&client_id=dthP8VNzMTvgPPCHRVAInVjlov43oenGQx8UkNn2VqE`
         );
         const newPhotos = await response.json();
         setImages((prevPhotos) => [...prevPhotos, ...newPhotos]);
