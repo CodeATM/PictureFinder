@@ -25,21 +25,21 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div
-      className={`w-full h-16 py-4 px-3 z-50 fixed transition  duration-500 top-0 ${
-        showBackground ? "bg-white text-black" : "text-gray-200"
-      }`}
-    >
-      <div className="container mx-auto flex justify-between items-center pr-2">
+    <div className="max-screen-wrapper py-4 px-3 h-16 transition  duration-500 top-0">
+      <div className="nav-inner-wrapper flex justify-between items-center pr-2 gap-[30px] ">
         <Link href="/">
           <div className="logo flex items-center space-x-2">
-            <FiImage className="text-xl" />{" "}
+            <FiImage className="text-xl" />
             <span className="font-semibold tracking-wide">PicFinder</span>
           </div>
         </Link>
 
-        <div className="relative w-64 pl-2">
+        <div className="flex-1">
           <Search showBackground={showBackground} />
+        </div>
+
+        <div className="hidden md:block">
+          <button className="bg-[#111] text-white py-3 px-4 rounded-xl ext-[18px] leading-[22px] font-[500] ">Explore</button>
         </div>
       </div>
     </div>

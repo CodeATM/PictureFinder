@@ -1,7 +1,7 @@
 "use client"; // Error components must be Client Components
 import { useEffect } from "react";
 import Link from "next/link";
-import SearchBox from "@Components/SearchBox";
+// import SearchBox from "@Components/SearchBox";
 
 export default function Error({ error, reset }) {
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function Error({ error, reset }) {
               Please try a search term
             </p>
             <div className="relative">
-              <SearchBox/>
+              {/* <SearchBox/> */}
             </div>
 
             <Link href ='/' className='font-semibold text-blue-950'>Try Again</Link>

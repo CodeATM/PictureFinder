@@ -1,0 +1,20 @@
+export const featureDummy = [
+    {id: 1, text: "Back To School"},
+    {id: 2, text: "Wallpapers"},
+    {id: 3, text: "Nature"},
+    {id: 3, text: "3D Renders"},
+    {id: 3, text: "Travel"},
+    {id: 4, text: "Architecture & Interiors"},
+    {id: 5, text: "Textures & Patterns"},
+    {id: 6, text: "Street Photography"},
+    {id: 7, text: "Film"},
+    {id: 8, text: "Animals"},
+    {id: 9, text: "Fashion & Beauty"},
+    {id: 10, text: "Food & Drink"},
+    {id: 11, text: "Street Photography"},
+    {id: 12, text: "Film"},
+    {id: 13, text: "Animals"},
+    {id: 14, text: "Fashion & Beauty"},
+    {id: 15, text: "Food & Drink"},
+    
+]

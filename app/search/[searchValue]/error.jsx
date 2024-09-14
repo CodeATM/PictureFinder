@@ -2,7 +2,7 @@
 
 
 import { useEffect } from "react";
-import SearchBox from "@Components/SearchBox";
+// import SearchBox from "@Components/SearchBox";
 
 export default function Error({ error, reset }) {
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function Error({ error, reset }) {
               Please try another search term
             </p>
             <div className="relative">
-              <SearchBox />
+              {/* <SearchBox /> */}
             </div>
           </div>
         </div>

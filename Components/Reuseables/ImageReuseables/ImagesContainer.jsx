@@ -11,9 +11,10 @@ const ImagesContainer = () => {
     default: 3,
     700: 2,
     500: 1,
-  }
+  };
   const [images, setImages] = useState([]);
   const [page, setPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     // Function to fetch images from Unsplash API
@@ -34,31 +35,33 @@ const ImagesContainer = () => {
   }, [page]);
 
   return (
-    <section className="container mx-auto my-8">
-      <InfiniteScroll
-        dataLength={images.length}
-        next={() => setPage(page + 1)}
-        hasMore={true} // Set to false when you've fetched all images
-      >
-         <Masonry
-          breakpointCols={breakpointColumnObj}
-          className="flex w-auto"
-          columnClassName=""
+    <section className="max-screen-wrapper my-8">
+      <div className="max-screen-inner">
+        <InfiniteScroll
+          dataLength={images.length}
+          next={() => setPage(page + 1)}
+          hasMore={true} // Set to false when you've fetched all images
         >
-          {images.map((image) => (
-            <div className="m-4" key={image.id}>
-              <Link href={`/Details/${image.id}`}>
-                <Image
-                  src={image.urls.small}
-                  alt={image.alt_description}
-                  width="500"
-                  height="500"
-                />
-              </Link>
-            </div>
-          ))}
-        </Masonry>
-      </InfiniteScroll>
+          <Masonry
+            breakpointCols={breakpointColumnObj}
+            className="flex w-auto"
+            columnClassName=""
+          >
+            {images.map((image) => (
+              <div className="m-4" key={image.id}>
+                <Link href={`/Details/${image.id}`}>
+                  <Image
+                    src={image.urls.small}
+                    alt={image.alt_description}
+                    width="500"
+                    height="500"
+                  />
+                </Link>
+              </div>
+            ))}
+          </Masonry>
+        </InfiniteScroll>
+      </div>
     </section>
   );
 };

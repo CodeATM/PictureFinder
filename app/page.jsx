@@ -1,15 +1,17 @@
-import Banner from '@Components/Banner'
-import ImagesContainer from '@Components/ImagesContainer'
-import Navbar from '@Components/Navbar'
-import React from 'react'
+import ImagesContainer from "@Components/Reuseables/ImageReuseables/ImagesContainer";
+import LandingSection from "@Components/LandingComponents";
+import React from "react";
+import ImageSection from "@Components/LandingComponents/ImageSection";
 
 const page = () => {
   return (
-    <div>
-      <Banner/>
-      <ImagesContainer/>
+    <div className="max-screen-wrapper">
+      <div className="max-screen-inner">
+        <LandingSection />
+        <ImageSection />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

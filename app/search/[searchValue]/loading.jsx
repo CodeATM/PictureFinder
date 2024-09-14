@@ -1,5 +1,6 @@
+import Skeleton from "@Components/Reuseables/Skeleton";
 import React from "react";
-import {  FiImage } from "react-icons/fi";
+import { FiImage } from "react-icons/fi";
 
 const loading = () => {
   return (
@@ -8,7 +9,7 @@ const loading = () => {
         <div className="container text-center flex flex-col items-center">
           <div className="text-black loading">
             <p className="text-xl font-bold">
-              <FiImage/>
+              <Skeleton />
             </p>
           </div>
         </div>

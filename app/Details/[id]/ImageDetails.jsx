@@ -7,7 +7,7 @@ import Image from "next/image";
 import img from "@public/assets/pic-2.png";
 import banner1 from "@public/assets/5.jpg";
 import Details from "./Details";
-import ImagesContainer from "@Components/ImagesContainer";
+import ImagesContainer from "@Components/Reuseables/ImageReuseables/ImagesContainer";
 import RelatedImages from "./RelatedImages";
 
 const ImageDetails = ({ toggleTab, toggleState }) => {
