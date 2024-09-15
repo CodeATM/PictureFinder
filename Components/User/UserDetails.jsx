@@ -19,7 +19,6 @@ const UserDetails = async ({ username }) => {
     following_count,
     location,
     portfolio_url,
-
     instagram_username,
     twitter_username,
   } = userDetails;
