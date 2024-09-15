@@ -17,7 +17,7 @@ const Page = ({ params: { collectionid } }) => {
           )}`,
           {
             headers: {
-              Authorization: `Client-ID dthP8VNzMTvgPPCHRVAInVjlov43oenGQx8UkNn2VqE`,
+              Authorization: `Client-ID p_t452A7QUpCofdR2rpkuG61WTEVOwHLMYv8MsuVG_c`,
             },
           }
         );
