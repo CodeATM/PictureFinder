@@ -6,17 +6,25 @@ const SingleImage = ({ details }) => {
     <div>
       <div className="heading flex justify-between items-center">
         <div className="flex space-x-3 items-center pr-2">
-          <img
-            src={details.user.profile_image.medium}
-            className=" rounded-full"
-            width="30"
-            height="30"
-          />
+          <Link href={`/user/${details.user.username}`}>
+            <img
+              src={details.user.profile_image.medium}
+              className=" rounded-full"
+              width="30"
+              height="30"
+            />
+          </Link>
           <div className="leading-tight ">
-            <h3 className="text-[18px] leading-[24px] font-[500] text-[#111]">{details.user.name}</h3>
-            <p className="text-[16px] leading-[24px] font-[400] text-[#838383]">
-              {details.user.username}
-            </p>
+            <Link href={`/user/${details.user.username}`}>
+              <h3 className="text-[18px] leading-[24px] font-[500] text-[#111]">
+                {details.user.name}
+              </h3>{" "}
+            </Link>
+            <Link href={`/user/${details.user.username}`}>
+              <p className="text-[16px] leading-[24px] font-[400] text-[#838383]">
+                {details.user.username}
+              </p>
+            </Link>
           </div>
         </div>
 
@@ -30,8 +38,8 @@ const SingleImage = ({ details }) => {
       </div>
 
       <div className="flex justify-center mt-8 mb-4">
-          <img src={details.urls.regular} alt="img" width="500" height="500" />
-        </div>
+        <img src={details.urls.regular} alt="img" width="500" height="500" />
+      </div>
     </div>
   );
 };

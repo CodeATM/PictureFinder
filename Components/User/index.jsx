@@ -25,7 +25,7 @@ export const UserData = ({ userId }) => {
 
   return (
     <div className="">
-      <div className="pl-[50px] my-[40px] flex w-full gap-x-[18px] border-b-[2px] border-b-[#eee] sm:my-[60px]  md:gap-x-[30px]">
+      <div className=" pl-[20px] lg:pl-[50px] my-[40px] flex w-full gap-x-[18px] border-b-[2px] border-b-[#eee] sm:my-[60px]  md:gap-x-[30px]">
         {tabs.map((tab) => {
           const active = tab.key === current;
           return (

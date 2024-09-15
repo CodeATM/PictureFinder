@@ -17,7 +17,7 @@ const userInfo = async ({username}) => {
     twitter_username
   } = userDetails;
   return (
-    <div className="p-4 border border-gray-200 rounded-md shadow-md">
+    <div className="p-4 border border-gray-200 rounded-md shadow-md max-w-[40px] lg:space-y-4 ">
     <div className="flex items-center space-x-4">
       <img
         src={profile_image?.large}

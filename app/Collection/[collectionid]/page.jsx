@@ -1,7 +1,8 @@
-'use client';
+"use client";
 import CollectionImage from "@Components/Collections/CollectionImage";
 import CollectionInfo from "@Components/Collections/CollectionInfo";
 import React, { useEffect, useState } from "react";
+import Skeleton from "@Components/Reuseables/Skeleton";
 
 const Page = ({ params: { collectionid } }) => {
   const [collection, setCollection] = useState(null);
@@ -11,7 +12,9 @@ const Page = ({ params: { collectionid } }) => {
     const fetchCollection = async () => {
       try {
         const response = await fetch(
-          `https://api.unsplash.com/collections/${encodeURIComponent(collectionid)}`,
+          `https://api.unsplash.com/collections/${encodeURIComponent(
+            collectionid
+          )}`,
           {
             headers: {
               Authorization: `Client-ID dthP8VNzMTvgPPCHRVAInVjlov43oenGQx8UkNn2VqE`,
@@ -25,7 +28,7 @@ const Page = ({ params: { collectionid } }) => {
 
         const data = await response.json();
         setCollection(data);
-        console.log(collection)
+        console.log(collection);
       } catch (error) {
         console.error("Error fetching collection:", error);
       } finally {
@@ -37,7 +40,13 @@ const Page = ({ params: { collectionid } }) => {
   }, [collectionid]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="max-screen-wrapper mt-20 ">
+        <div className="max-screen-inner">
+          <Skeleton />
+        </div>
+      </div>
+    );
   }
 
   if (!collection) {
@@ -45,10 +54,13 @@ const Page = ({ params: { collectionid } }) => {
   }
 
   return (
-    <div className="max-screen-wrapper mt-20 ">
+    <div className="max-screen-wrapper lg:mt-20 mt-10  ">
       <div className="max-screen-inner">
         <CollectionInfo collection={collection} />
-        <CollectionImage collection={collectionid} count={collection.total_photos} />
+        <CollectionImage
+          collection={collectionid}
+          count={collection.total_photos}
+        />
       </div>
     </div>
   );
