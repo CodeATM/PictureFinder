@@ -1,56 +1,31 @@
-"use client";
 import CollectionImage from "@Components/Collections/CollectionImage";
 import CollectionInfo from "@Components/Collections/CollectionInfo";
-import React, { useEffect, useState } from "react";
+import FetchingError from "@Components/Reuseables/FetchingError";
 import Skeleton from "@Components/Reuseables/Skeleton";
+import { getCollectionById } from "@lib/DataFetching";
 
-const Page = ({ params: { collectionid } }) => {
-  const [collection, setCollection] = useState(null);
-  const [loading, setLoading] = useState(true);
+const Page = async ({ params: { collectionid } }) => {
+  const collection = await getCollectionById(collectionid);
+  console.log(collection)
 
-  useEffect(() => {
-    const fetchCollection = async () => {
-      try {
-        const response = await fetch(
-          `https://api.unsplash.com/collections/${encodeURIComponent(
-            collectionid
-          )}`,
-          {
-            headers: {
-              Authorization: `Client-ID p_t452A7QUpCofdR2rpkuG61WTEVOwHLMYv8MsuVG_c`,
-            },
-          }
-        );
+  // if (loading) {
+  //   return (
+  //     <div className="max-screen-wrapper mt-20 ">
+  //       <div className="max-screen-inner">
+  //         <Skeleton />
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
-        if (!response.ok) {
-          throw new Error(`Error fetching collection: ${response.statusText}`);
-        }
-
-        const data = await response.json();
-        setCollection(data);
-        console.log(collection);
-      } catch (error) {
-        console.error("Error fetching collection:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCollection();
-  }, [collectionid]);
-
-  if (loading) {
+  if (!collection) {
     return (
       <div className="max-screen-wrapper mt-20 ">
         <div className="max-screen-inner">
-          <Skeleton />
+          <FetchingError />
         </div>
       </div>
     );
-  }
-
-  if (!collection) {
-    return <div>Collection not found</div>;
   }
 
   return (

@@ -15,7 +15,7 @@ const ImageSection = () => {
     const fetchImages = async () => {
       try {
         const response = await fetch(
-          `https://api.unsplash.com/photos?page=${page}&per_page=10&client_id=p_t452A7QUpCofdR2rpkuG61WTEVOwHLMYv8MsuVG_c`
+          `https://api.unsplash.com/photos?page=${page}&per_page=10&client_id=I52UPWjSrVe5VkIVEs3H9VIy4VX9XFBi9XQ5kf8VkFg`
         );
         const newPhotos = await response.json();
         setImages((prevPhotos) => [...prevPhotos, ...newPhotos]);
