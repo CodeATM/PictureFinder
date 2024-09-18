@@ -1,7 +1,7 @@
 "use client"; // Ensure this runs on the client side
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper-bundle.css"; // Import Swiper styles
+import "swiper/swiper-bundle.css";
 import SwiperCore, { autoplay, Pagination } from "swiper";
 
 // Install modules
