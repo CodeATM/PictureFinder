@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import MasonryGrid from "@Components/Reuseables/ImageReuseables/MasonryGrid";
 import FetchingError from "@Components/Reuseables/FetchingError";
-import Skeleton from "@Components/Reuseables/Skeleton";
+import { Skeleton } from "@Components/Reuseables/Skeleton";
 
 const ImageSection = () => {
   const [images, setImages] = useState([]);

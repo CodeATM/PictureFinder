@@ -1,8 +1,22 @@
+"use client";
+import { useState, useEffect } from "react";
 import { fetchUnsplashCollections } from "@lib/DataFetching";
 import Link from "next/link";
+import { CollectionComponentSkeleton } from "@Components/Reuseables/Skeleton";
 
-const LandingCollection = async () => {
-  const collections = await fetchUnsplashCollections(); // Await the collections data
+const LandingCollection = () => {
+  const [collections, setCollections] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const fetchedCollections = await fetchUnsplashCollections();
+      setCollections(fetchedCollections);
+      setLoading(false);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div className="h-full w-full rounded-[10px] border-[1px] border-[#d1d1d1] p-[16px] space-y-[10px] ">
@@ -12,38 +26,39 @@ const LandingCollection = async () => {
         </p>
 
         <span className="text-[16px] leading-[24px] font-[400] text-[#292929] cursor-pointer underline ">
-          <Link href={`/Collection`}>See all</Link>
+          <Link href="/Collection">See all</Link>
         </span>
       </div>
-      <ul>
-        {collections.map((collection) => (
-          <Link href={`/Collection/${collection.id}`} key={collection.id}>
-            <li
-              key={collection.id}
-              className="mb-4 flex gap-[8px] cursor-pointer hover:bg-[#f3f3f3] px-[8px] py-[6px] rounded-[8px] "
-            >
-              <div className="h-[50px] w-[50px] ">
-                {collection.cover_photo && (
-                  <img
-                    src={collection.cover_photo.urls.thumb}
-                    alt={collection.title}
-                    className="w-full h-full object-cover rounded-lg"
-                  />
-                )}
-              </div>
+      {loading || collections.length == 0 ? (
+        <CollectionComponentSkeleton />
+      ) : (
+        <ul>
+          {collections.map((collection) => (
+            <Link href={`/Collection/${collection.id}`} key={collection.id}>
+              <li className="mb-4 flex gap-[8px] cursor-pointer hover:bg-[#f3f3f3] px-[8px] py-[6px] rounded-[8px] ">
+                <div className="h-[50px] w-[50px] ">
+                  {collection.cover_photo && (
+                    <img
+                      src={collection.cover_photo.urls.thumb}
+                      alt={collection.title}
+                      className="w-full h-full object-cover rounded-lg"
+                    />
+                  )}
+                </div>
 
-              <div className="">
-                <h2 className="text-[15px] leading-[24px] font-[500] text-[#111] ">
-                  {collection.title}
-                </h2>
-                <p className="text-[14px] leading-[24px] font-[400] text-[#838383] ">
-                  by {collection.user.name}
-                </p>
-              </div>
-            </li>
-          </Link>
-        ))}
-      </ul>
+                <div className="">
+                  <h2 className="text-[15px] leading-[24px] font-[500] text-[#111] ">
+                    {collection.title}
+                  </h2>
+                  <p className="text-[14px] leading-[24px] font-[400] text-[#838383] ">
+                    by {collection.user.name}
+                  </p>
+                </div>
+              </li>
+            </Link>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

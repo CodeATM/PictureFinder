@@ -2,10 +2,11 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-import SwiperCore, { autoplay, Pagination } from "swiper";
+import "swiper/css/autoplay";
+import SwiperCore, { Autoplay, Pagination } from "swiper";
 
 // Install modules
-SwiperCore.use([autoplay, Pagination]);
+SwiperCore.use([Autoplay, Pagination]);
 
 const BannerClient = ({ images }) => {
   return (
@@ -13,7 +14,7 @@ const BannerClient = ({ images }) => {
       <Swiper
         spaceBetween={0}
         slidesPerView={1}
-        autoplay={{ delay: 3000, disableOnInteraction: false }} // 3 seconds
+        autoplay={{ delay: 1000 }}
         loop={true}
         pagination={{ clickable: true }}
         className="w-full h-full"
