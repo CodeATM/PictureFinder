@@ -16,6 +16,8 @@ const getLongestTag = (tags) => {
 const Page = async ({ params: { imageId } }) => {
   const details = await getOneImage(imageId);
 
+  console.log(details)
+
   if (!details) {
     return (
       <div className="max-screen-wrapper">
