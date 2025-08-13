@@ -29,8 +29,8 @@ const Navbar = () => {
       <div className="nav-inner-wrapper flex justify-between items-center pr-2 gap-[30px] ">
         <Link href="/">
           <div className="logo flex items-center space-x-2">
-            <FiImage className="text-xl" />
-            <span className="font-semibold tracking-wide">PicFinder</span>
+            <img src="/Apertur.png" alt="" className="w-[30px]" />
+            <span className="font-semibold tracking-wide">Apertur</span>
           </div>
         </Link>
 
@@ -39,7 +39,9 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:block">
-          <button className="bg-[#111] text-white py-3 px-4 rounded-xl ext-[18px] leading-[22px] font-[500] ">Explore</button>
+          <button className="bg-[#111] text-white py-3 px-4 rounded-xl ext-[18px] leading-[22px] font-[500] ">
+            Explore
+          </button>
         </div>
       </div>
     </div>

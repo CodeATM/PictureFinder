@@ -1,4 +1,4 @@
-import Skeleton from "@Components/Reuseables/Skeleton";
+import {Skeleton} from "@Components/Reuseables/Skeleton";
 import React from "react";
 import { FiImage } from "react-icons/fi";
 

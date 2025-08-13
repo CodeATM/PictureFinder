@@ -1,9 +1,10 @@
+"use client"
 import React, { useEffect, useState } from 'react';
 import { fetchUserImages } from '@lib/DataFetching';
 import MasonryGrid from "@Components/Reuseables/ImageReuseables/MasonryGrid";
-import Skeleton from '@Components/Reuseables/Skeleton';
+import { Skeleton } from '@Components/Reuseables/Skeleton';
 
-const UserPhotos = ({ username }) => {
+export const UserPhotos = ({ username }) => {
   const [userPhotos, setUserPhotos] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -29,4 +30,4 @@ const UserPhotos = ({ username }) => {
   );
 };
 
-export default UserPhotos;
+

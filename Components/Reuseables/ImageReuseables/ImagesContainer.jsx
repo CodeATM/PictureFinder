@@ -2,37 +2,19 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Masonry from "react-masonry-css";
+import { useUnsplashImages } from "@lib/hooks/collection-hooks";
 
 const ImagesContainer = () => {
   const breakpointColumnObj = {
-    default: 3,
+    default: 4,
     700: 2,
     500: 1,
   };
-  const [images, setImages] = useState([]);
   const [page, setPage] = useState(1);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    // Function to fetch images from Unsplash API
-    const fetchImages = async () => {
-      try {
-        const response = await fetch(
-          `https://api.unsplash.com/photos?page=${page}&per_page=10&client_id=dthP8VNzMTvgPPCHRVAInVjlov43oenGQx8UkNn2VqE`
-        );
-        const newPhotos = await response.json();
-        setImages((prevPhotos) => [...prevPhotos, ...newPhotos]);
-      } catch (error) {
-        console.error("Error fetching images:", error);
-      }
-    };
-
-    // Initial fetch
-    fetchImages();
-  }, [page]);
+  const { data: images = [], isLoading, isError } = useUnsplashImages(page);
 
   return (
     <section className="max-screen-wrapper my-8">

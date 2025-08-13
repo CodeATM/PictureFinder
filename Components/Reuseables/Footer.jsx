@@ -8,15 +8,15 @@ const Footer = () => {
         <div className="max-screen-inner flex flex-col md:flex-row md:justify-between px-5 py-10">
           <div className="md:w-[30%] space-y-2 md:space-y-0 md:text-start">
             <div className="flex gap-3">
-              <FiImage className="text-2xl text-white md:flex md:justify-center" />
+              <img src="/Apertur-bg.png" alt="" className="w-[30px]" />
               <h1 className="text-white text-[20px] leading-[32px] font-semibold">
-                Picfinder
+                Apertur
               </h1>
             </div>
             <p className="text-[15px] leading-[22px] text-[#838383] font-[400] ">
-              Picfinder is a website the brings differnt images to your
-              fingertip for download. The website run on unsoplash Api which is
-              one of the biggest image api provider available today.
+              Apertur is a website the brings differnt images to your fingertip
+              for download. The website run on unsoplash Api which is one of the
+              biggest image api provider available today.
             </p>
             <div className="flex items-center justify-center gap-4"></div>
           </div>

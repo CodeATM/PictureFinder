@@ -4,8 +4,9 @@ import Masonry from "react-masonry-css";
 import ImageCard from "./ImageCard";
 
 const MasonryGrid = ({ images }) => {
+  console.log(images)
   const breakpointColumnObj = {
-    default: 3,
+    default: 4,
     700: 2,
     500: 1,
   };

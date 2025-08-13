@@ -6,7 +6,7 @@ const Content = () => {
     <div className="flex items-end h-full w-full">
       <div className="space-y-[8px] w-full ">
         <h1 className="text-[30px] leading-[38px] text-[#111] font-[700]">
-          Picfinder
+          Apertur
         </h1>
         <div className=" space-y-[2px] ">
           <p className="text-[18px] leading-[22px] text-[#292929] font-[400]">

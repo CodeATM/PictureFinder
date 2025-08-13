@@ -2,21 +2,12 @@
 import { useState, useEffect } from "react";
 import { fetchUnsplashCollections } from "@lib/DataFetching";
 import Link from "next/link";
+import { useUnsplashCollections } from "@lib/hooks/collection-hooks";
 import { CollectionComponentSkeleton } from "@Components/Reuseables/Skeleton";
 
 const LandingCollection = () => {
-  const [collections, setCollections] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const fetchedCollections = await fetchUnsplashCollections();
-      setCollections(fetchedCollections);
-      setLoading(false);
-    };
-
-    fetchData();
-  }, []);
+  const { data, isLoading, error } = useUnsplashCollections();
+  console.log(data)
 
   return (
     <div className="h-full w-full rounded-[10px] border-[1px] border-[#d1d1d1] p-[16px] space-y-[10px] ">
@@ -26,15 +17,15 @@ const LandingCollection = () => {
         </p>
 
         <span className="text-[16px] leading-[24px] font-[400] text-[#292929] cursor-pointer underline ">
-          <Link href="/Collection">See all</Link>
+          <Link href="/collections">See all</Link>
         </span>
       </div>
-      {loading || collections.length == 0 ? (
+      {isLoading || data.length == 0 ? (
         <CollectionComponentSkeleton />
       ) : (
         <ul>
-          {collections.map((collection) => (
-            <Link href={`/Collection/${collection.id}`} key={collection.id}>
+          {data.map((collection) => (
+            <Link href={`/collections/${collection.id}`} key={collection.id}>
               <li className="mb-4 flex gap-[8px] cursor-pointer hover:bg-[#f3f3f3] px-[8px] py-[6px] rounded-[8px] ">
                 <div className="h-[50px] w-[50px] ">
                   {collection.cover_photo && (

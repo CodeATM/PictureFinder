@@ -4,7 +4,7 @@ import Link from "next/link";
 const CollectionCard = ({collection}) => {
   return (
     <div>
-      <Link href={`/Collection/${collection.id}`} key={collection.id}>
+      <Link href={`/collections/${collection.id}`} key={collection.id}>
         <div key={collection.id} className="relative group">
           <div className="w-full h-64 bg-gray-200 relative rounded-md overflow-hidden">
             <div className="grid grid-cols-3 grid-rows-2 gap-1 h-full">
@@ -41,7 +41,7 @@ const CollectionCard = ({collection}) => {
                 </Link>
               </p>
             </div>
-            <ul className="flex gap-[16px] flex-wrap mt-[6px]">
+            {/* <ul className="flex gap-[16px] flex-wrap mt-[6px]">
               {collection.tags.slice(0, 3).map((tag, index) => (
                 <li
                   key={index}
@@ -50,7 +50,7 @@ const CollectionCard = ({collection}) => {
                   {tag.title}
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
         </div>
       </Link>

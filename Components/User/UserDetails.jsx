@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import { FaLocationArrow } from "react-icons/fa";
 
-const UserDetails = async ({ username }) => {
+export const UserDetails = async ({ username }) => {
   const userDetails = await fetchUser(username);
   const {
     name,

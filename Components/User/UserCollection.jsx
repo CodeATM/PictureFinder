@@ -1,9 +1,10 @@
+"use client"
 import React, { useEffect, useState } from 'react';
 import { fetchUserCollection } from '@lib/DataFetching'; // Make sure this function exists
 import CollectionCard from "@Components/Reuseables/CollectionReueabes/CollectionCard";
-import Skeleton from '@Components/Reuseables/Skeleton';
+import { Skeleton } from '@Components/Reuseables/Skeleton';
 
-const UserCollection = ({ username }) => {
+export const UserCollection = ({ username }) => {
   const [collections, setCollections] = useState([]);
   const [loading, setLoading] = useState(true);
 

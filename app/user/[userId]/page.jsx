@@ -1,5 +1,5 @@
 import { UserData } from "@Components/User";
-import UserDetails from "@Components/User/UserDetails";
+import { UserDetails } from "@Components/User/UserDetails";
 import React from "react";
 
 const page = async ({ params: { userId } }) => {

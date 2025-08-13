@@ -1,42 +1,25 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import MasonryGrid from "@Components/Reuseables/ImageReuseables/MasonryGrid";
 import FetchingError from "@Components/Reuseables/FetchingError";
-import Skeleton from "@Components/Reuseables/Skeleton";
+import { Skeleton } from "@Components/Reuseables/Skeleton";
+import { useUnsplashSearchImages } from "@lib/hooks/collection-hooks";
 
 const Page = ({ params: { searchValue } }) => {
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
-  const breakpointColumnObj = {
-    default: 3,
-    700: 2,
-    500: 1,
-  };
+  const {
+    data,
+    isLoading,
+    isError,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+  } = useUnsplashSearchImages(searchValue);
 
-  const [images, setImages] = useState([]);
-  const [page, setPage] = useState(1);
+  // Flatten all pages into a single array
+  const images = data ? data.pages.flat() : [];
 
-  // Function to fetch images from Unsplash API
-  const fetchImages = async () => {
-    try {
-      const response = await fetch(
-        `https://api.unsplash.com/search/photos?&query=${searchValue}&page=${page}&per_page=10&client_id=I52UPWjSrVe5VkIVEs3H9VIy4VX9XFBi9XQ5kf8VkFg`
-      );
-      const newPhotos = await response.json();
-      setImages((prevPhotos) => [...prevPhotos, ...newPhotos.results]);
-      setLoading(false);
-    } catch (error) {
-      setError(true);
-      console.error("Error fetching images:", error.message || error);
-    }
-  };
-
-  useEffect(() => {
-    fetchImages();
-  }, [page, searchValue]);
-
-  if (error)
+  if (isError)
     return (
       <div className="max-screen-wrapper">
         <div className="max-screen-inner">
@@ -44,7 +27,7 @@ const Page = ({ params: { searchValue } }) => {
         </div>
       </div>
     );
-  if (loading)
+  if (isLoading)
     return (
       <div className="max-screen-wrapper">
         <div className="max-screen-inner">
@@ -56,12 +39,12 @@ const Page = ({ params: { searchValue } }) => {
   return (
     <section className="max-screen-wrapper my-[80px] ">
       <div className="max-screen-inner">
-
         <div className=" mt-[40px]">
           <InfiniteScroll
             dataLength={images.length}
-            next={() => setPage(page + 1)}
-            hasMore={true}
+            next={fetchNextPage}
+            hasMore={!!hasNextPage}
+            loader={<Skeleton />}
           >
             <MasonryGrid images={images} />
           </InfiniteScroll>

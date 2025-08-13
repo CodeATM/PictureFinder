@@ -1,6 +1,5 @@
 "use client"; // Error components must be Client Components
 
-
 import { useEffect } from "react";
 // import SearchBox from "@Components/SearchBox";
 
@@ -25,9 +24,7 @@ export default function Error({ error, reset }) {
             <p className="text-xl  tracking-wide text-gray-600">
               Please try another search term
             </p>
-            <div className="relative">
-              {/* <SearchBox /> */}
-            </div>
+            <div className="relative">{/* <SearchBox /> */}</div>
           </div>
         </div>
       </div>

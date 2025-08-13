@@ -5,6 +5,7 @@ import FetchingError from "@Components/Reuseables/FetchingError";
 
 const page = async () => {
   let collections = await getCollections();
+  console.log(collections)
 
   if (!collections) return <FetchingError />;
 

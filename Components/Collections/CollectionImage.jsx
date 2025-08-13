@@ -1,11 +1,17 @@
 import React from "react";
 import MasonryGrid from "@Components/Reuseables/ImageReuseables/MasonryGrid";
-import { fetchCollectionImages } from "@lib/DataFetching";
 
-const CollectionImage = async ({ collection, count }) => {
-  const fetchedImages = await fetchCollectionImages(collection);
-  console.log(fetchedImages);
-
+const CollectionImage = ({ images, count }) => {
+  // If images is empty, show error message
+  if (!images || images.length === 0) {
+    return (
+      <section className="mt-16">
+        <p className="text-red-500 text-lg font-medium">
+          This collection cannot be viewed due to Unsplash restrictions
+        </p>
+      </section>
+    );
+  }
 
   return (
     <section className="mt-16">
@@ -15,7 +21,7 @@ const CollectionImage = async ({ collection, count }) => {
         </p>
       </div>
       <div>
-        <MasonryGrid images={fetchedImages} />
+        <MasonryGrid images={images} />
       </div>
     </section>
   );
