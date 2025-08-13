@@ -45,3 +45,15 @@ const SingleImage = ({ details }) => {
 };
 
 export default SingleImage;
+
+
+
+
+
+// NEXT_PUBLIC_UNSPLASH_ACCESS_KEY = EZyWiNr7ARuImBckN4NhDDk8A8uf8IcvZ7Pgfljsl8s
+// NEXT_PUBLIC_UNSPLASH_ACCESS_KEY_2 = cR5S9aiayAaF-jXsPIOS3D0zIZyRkDOnphCjNgLnAkc
+
+
+// UNSPLASH_ACCESS_KEY= cR5S9aiayAaF-jXsPIOS3D0zIZyRkDOnphCjNgLnAkc
+// UNSPLASH_ACCESS_KEY_2= EZyWiNr7ARuImBckN4NhDDk8A8uf8IcvZ7Pgfljsl8s
+
