@@ -1,3 +1,4 @@
+"use client";
 import ImagesContainer from "@Components/Reuseables/ImageReuseables/ImagesContainer";
 import LandingSection from "@Components/LandingComponents";
 import React from "react";
